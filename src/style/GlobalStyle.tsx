@@ -11,6 +11,8 @@ const style = css`
     --primary: #B672FD;
     --secondary: #E7266C;
     --highlight: #E2FAFF;
+    
+    --desktop-content: 1083px;
   }
   
   html {
@@ -19,6 +21,7 @@ const style = css`
   
   body {
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--black);
     
     .normal-24 {
       font-family: "Noto Sans KR", sans-serif;

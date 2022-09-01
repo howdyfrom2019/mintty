@@ -2,8 +2,5 @@
 import styled from "@emotion/styled";
 
 export const WallpaperLayout = styled.div`
-  color: ${({ theme }) => {
-    console.log(theme);
-    return theme.colors.black;
-  }};
+  color: ${({ theme }) => theme.colors.black};
 `;

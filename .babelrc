@@ -1,3 +1,10 @@
 {
-  "plugins": ["@emotions"]
+  "presets": ["@emotion/babel-preset-css-prop"],
+  "plugins": [
+    "@emotions",
+    {
+      "autoLabel": "dev-only",
+      "labelFormat": "sj-[local]"
+    }
+  ]
 }

@@ -1,46 +1,19 @@
-# Getting Started with Create React App
+# The Littest and Easiest NFT Guide
+`세상 힙하고 쉬운 NFT 가이드`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is for who feels a high barrier to learn the **web 3.0** environment.
+I hope this project would be a good buddy to jump over the barrier.
 
-## Available Scripts
+And I made a smart contract in solidiy. so you guys don't need to additional fees for minting your NFTs.
+Just follow this websites direction. you gotta easily get your own NFTs (in the Rinkeby testNet and mainNet.)
 
-In the project directory, you can run:
+And... It's time to dive into the web3.0!✈️
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+이 프로젝트는 웹 3.0 생태계에 진입 장벽을 느낀 사람들을 위해 만들었습니다.
+이 프로젝트가 여러분들이 웹 3.0에 쉽게 친근하게 적응할 수 있는 좋은 친구가 되었으면 좋겠습니다!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+그리고, 제가 NFT 민팅을 위한 스마트 컨트랙트를 미리 작성해서 넣어놨습니다. 다른 플랫폼보다 훨씬 싸게 민팅하실 수 있을거에요.
+이 웹사이트의 가이드 대로만 따라하신다면 쉽게 당신만의 NFT를 얻을 수 있습니다. (테스트넷과 메인넷을 모두 지원합니다.)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+그러면.. 이제 웹 3.0으로 출발할 시간입니다!✈️

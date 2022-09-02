@@ -27,22 +27,30 @@ const IceBreakingTexts = [
   }
 ];
 
-const Splash = () => {
+interface Props {
+  callbackProgress?: (progress: number) => void
+}
+const Splash: React.FC<Props> = ({ callbackProgress }) => {
   const [progress, setProgress] = useState(0);
   const [iceBreakingIndex , setIceBreakingIndex] = useState(0);
 
   const onLoadingProgress = useCallback((currentProgress: number) => {
     setProgress(currentProgress);
-  }, [progress]);
+  }, []);
 
   const getRandomIceBrakingObject = useCallback(() => {
     const n = IceBreakingTexts.length;
     setIceBreakingIndex(Math.round(Math.random() * n));
-  }, [IceBreakingTexts]);
+  }, []);
 
   useEffect(() => {
     getRandomIceBrakingObject();
   }, [getRandomIceBrakingObject, iceBreakingIndex]);
+
+  useEffect(() => {
+    callbackProgress && callbackProgress(progress);
+  }, [callbackProgress, progress]);
+
   return (
     <SplashWrapper>
       <Tint>

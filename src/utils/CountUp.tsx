@@ -46,11 +46,11 @@ const CountUp: React.FC<Props> = (
         clearInterval(counter);
       }
     }, increasingDuration.current * 1.2);
-  }, [count, setCount, end]);
+  }, [setCount, end, easeOutQuad, start]);
 
   useEffect(() => {
     if (currentCount.current < end) rise();
-  }, [currentCount.current, rise, count]);
+  }, [end, rise, count]);
 
   useEffect(() => {
     if (callback) {

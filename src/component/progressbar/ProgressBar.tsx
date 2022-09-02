@@ -12,11 +12,11 @@ const ProgressBar: React.FC<Props> = ({ className, color, progress }) => {
 
   const fillLine = useCallback(() => {
     setLineProgress(progress);
-  }, [progress, lineProgress]);
+  }, [progress]);
 
   useEffect(() => {
     fillLine();
-  }, [progress]);
+  }, [progress, fillLine]);
   return (
     <TransparentLine className={ className } color={color}>
       <FillingLine color={color} progress={lineProgress} />

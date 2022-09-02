@@ -19,10 +19,8 @@ export const SplashWrapper = styled.div`
     display: block;
     object-fit: cover;
     margin: 0 auto;
-    width: 35.33vw;
-    //animation-duration: 3s;
-    //animation-name: glow;
-    //animation-iteration-count: infinite;
+    //width: 35.33vw;
+    height: 100vh;
   }
   
   & > img.side {
@@ -35,16 +33,6 @@ export const SplashWrapper = styled.div`
   
   .right {
     transform: rotateY(180deg) translateX(-98%);
-  }
-  
-  @keyframes glow {
-    from {
-      filter: brightness(80%);
-    }
-    
-    to {
-      filter: brightness(110%);
-    }
   }
 `;
 
@@ -60,8 +48,4 @@ export const Tint = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  .stencil-128::after {
-    content: " %";
-  }
 `;

@@ -30,6 +30,7 @@ const style = css`
       font-style: normal;
       font-weight: normal;
       letter-spacing: -0.017em;
+      white-space: break-spaces;
     }
 
     .bold-36 {
@@ -57,6 +58,7 @@ const style = css`
       font-style: normal;
       font-weight: bold;
       letter-spacing: -0.017em;
+      white-space: break-spaces;
     }
     
     .stencil-24 {

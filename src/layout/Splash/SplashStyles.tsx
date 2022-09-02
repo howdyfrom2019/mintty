@@ -48,4 +48,24 @@ export const Tint = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  .bottomContainer {
+    width: 720px;
+    position: absolute;
+    transform: translateY(100%);
+  }
+  
+  .progressBar {
+    margin: ${({ theme }) => {
+      return `${theme.fontSizes.md} auto ${theme.fontSizes.xl} auto`;
+    }};
+  }
+  
+  .IceBreaking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
 `;

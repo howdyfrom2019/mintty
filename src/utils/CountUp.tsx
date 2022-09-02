@@ -6,7 +6,7 @@ interface Props {
   suffix?: string;
   start?: number;
   end: number;
-  easingFn?: (x: number) => number;
+  callback?: (progress: number) => void;
   duration: number;
 }
 
@@ -17,10 +17,11 @@ const CountUp: React.FC<Props> = (
     suffix,
     start,
     end,
-    easingFn,
+    callback,
     duration
   }) => {
   const [count, setCount] = useState(start ? start : 0);
+  const [currentProgress, setCurrentProgress] = useState(0);
   const increasingDuration = useRef(duration / (end - (start ? start : 0)));
   const increasingUnit = useRef((end - (start ? start : 0)) / duration);
   const currentCount = useRef(start ? start : 0);
@@ -33,8 +34,10 @@ const CountUp: React.FC<Props> = (
     const counter = setInterval(() => {
       const progress = currentCount.current / end - (start ? start : 0);
       const upVal = increasingUnit.current * Math.pow(easeOutQuad(progress), 2);
-      currentCount.current += upVal === 0 ? 1 : (progress >= 0.93 ? upVal / (100 * progress) : upVal);
-      if (currentCount.current + upVal >= end - 1) {
+      currentCount.current += upVal === 0 ? 1 : (progress >= 0.96 ? upVal / (24 * progress) : upVal);
+      setCurrentProgress(progress);
+
+      if (currentCount.current + upVal >= end) {
         currentCount.current = end;
         clearInterval(counter);
       }
@@ -42,12 +45,18 @@ const CountUp: React.FC<Props> = (
       if (progress >= 1) {
         clearInterval(counter);
       }
-    }, increasingDuration.current * 1.5);
+    }, increasingDuration.current * 1.2);
   }, [count, setCount, end]);
 
   useEffect(() => {
     if (currentCount.current < end) rise();
   }, [currentCount.current, rise, count]);
+
+  useEffect(() => {
+    if (callback) {
+      callback(currentProgress);
+    }
+  }, [callback, currentProgress]);
 
   return (
     <span className={className ? className : ""}>{prefix}{Math.floor(count)}{suffix}</span>

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { SplashWrapper, Tint } from "./SplashStyles";
 import SplashBackground from "../../assets/img/splash-background.png";
 import CountUp from "../../utils/CountUp";
@@ -28,11 +28,14 @@ const IceBreakingTexts = [
 ];
 
 interface Props {
-  callbackProgress?: (progress: number) => void
+  callbackProgress?: (progress: number) => void;
+  callbackImgWidth: (width: number) => void;
 }
-const Splash: React.FC<Props> = ({ callbackProgress }) => {
+const Splash: React.FC<Props> = ({ callbackProgress, callbackImgWidth }) => {
   const [progress, setProgress] = useState(0);
   const [iceBreakingIndex , setIceBreakingIndex] = useState(0);
+  const tintRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   const onLoadingProgress = useCallback((currentProgress: number) => {
     setProgress(currentProgress);
@@ -40,20 +43,29 @@ const Splash: React.FC<Props> = ({ callbackProgress }) => {
 
   const getRandomIceBrakingObject = useCallback(() => {
     const n = IceBreakingTexts.length;
-    setIceBreakingIndex(Math.round(Math.random() * n));
+    setIceBreakingIndex(Math.floor(Math.random() * n));
   }, []);
 
   useEffect(() => {
-    getRandomIceBrakingObject();
+    return () => {
+      getRandomIceBrakingObject();
+    }
   }, [getRandomIceBrakingObject, iceBreakingIndex]);
 
   useEffect(() => {
     callbackProgress && callbackProgress(progress);
-  }, [callbackProgress, progress]);
+    callbackImgWidth(imgRef.current?.clientWidth || 0);
+  }, [callbackProgress, progress, callbackImgWidth]);
+
+  useEffect(() => {
+    if (tintRef.current && progress === 1) {
+      tintRef.current.className += " hidden";
+    }
+  }, [progress]);
 
   return (
     <SplashWrapper>
-      <Tint>
+      <Tint ref={tintRef}>
         <CountUp
           className={"stencil-128"}
           end={100}
@@ -68,13 +80,13 @@ const Splash: React.FC<Props> = ({ callbackProgress }) => {
             <ProgressBar progress={progress * 100} />
           </div>
           <div className={"IceBreaking"}>
-            <span className={"bold-36"}>{IceBreakingTexts[iceBreakingIndex].title}</span>
-            <span className={"normal-24"}>{IceBreakingTexts[iceBreakingIndex].desc}</span>
+            <span className={"bold-36"}>{IceBreakingTexts[iceBreakingIndex]?.title}</span>
+            <span className={"normal-24"}>{IceBreakingTexts[iceBreakingIndex]?.desc}</span>
           </div>
         </div>
       </Tint>
       <img className={`side left`} src={SplashBackground} alt={"background"} />
-      <img src={SplashBackground} alt={"background"} />
+      <img src={SplashBackground} alt={"background"} ref={imgRef} />
       <img className={`side right`} src={SplashBackground} alt={"background"} />
     </SplashWrapper>
   );

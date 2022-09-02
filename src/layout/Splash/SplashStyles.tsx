@@ -8,6 +8,8 @@ export const SplashWrapper = styled.div`
   display: flex;
   justify-content: center;
   transform-origin: top center;
+  user-select: none;
+  
   ::after {
     content: "";
     display: block;
@@ -25,6 +27,7 @@ export const SplashWrapper = styled.div`
   
   & > img.side {
     filter: blur(1rem);
+    margin: 1.5rem 0;
   }
   
   .left {
@@ -33,6 +36,11 @@ export const SplashWrapper = styled.div`
   
   .right {
     transform: rotateY(180deg) translateX(-98%);
+  }
+  
+  .hidden {
+    transition: all ease-out 0.62s;
+    opacity: 0;
   }
 `;
 

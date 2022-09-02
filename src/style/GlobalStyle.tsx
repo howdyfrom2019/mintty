@@ -22,6 +22,8 @@ const style = css`
   body {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: var(--black);
+    max-width: 100vw;
+    overflow-x: hidden;
     
     .normal-24 {
       font-family: "Noto Sans KR", sans-serif;

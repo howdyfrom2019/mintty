@@ -28,7 +28,7 @@ const style = css`
     .normal-24 {
       font-family: "Noto Sans KR", sans-serif;
       color: var(--white);
-      font-size: 24px;
+      font-size: clamp(12px, 1.667vw, 24px);
       font-style: normal;
       font-weight: normal;
       letter-spacing: -0.017em;
@@ -38,7 +38,7 @@ const style = css`
     .bold-36 {
       font-family: "Noto Sans KR", sans-serif;
       color: var(--white);
-      font-size: 36px;
+      font-size: clamp(16px, 2.5vw, 36px);
       font-style: normal;
       font-weight: bold;
       letter-spacing: -0.017em;
@@ -47,7 +47,7 @@ const style = css`
     .stencil-64 {
       font-family: "Atami", sans-serif;
       color: var(--white);
-      font-size: 64px;
+      font-size: clamp(36px, 4.44vw, 64px);
       font-style: normal;
       font-weight: bold;
       letter-spacing: -0.017em;
@@ -56,7 +56,7 @@ const style = css`
     .normal-64 {
       font-family: "Noto Sans KR", sans-serif;
       color: var(--white);
-      font-size: 64px;
+      font-size: clamp(36px, 4.44vw, 64px);
       font-style: normal;
       font-weight: bold;
       letter-spacing: -0.017em;
@@ -66,7 +66,7 @@ const style = css`
     .stencil-24 {
       font-family: "Atami", sans-serif;
       color: var(--white);
-      font-size: 24px;
+      font-size: clamp(12px, 1.667vw, 24px);
       font-style: normal;
       font-weight: bold;
       letter-spacing: -0.017em;
@@ -75,7 +75,7 @@ const style = css`
     .stencil-title-24 {
       font-family: 'a Atmospheric', sans-serif;
       color: var(--white);
-      font-size: 24px;
+      font-size: clamp(12px, 1.667vw, 24px);
       font-style: normal;
       font-weight: normal;
       text-align: center;
@@ -85,7 +85,7 @@ const style = css`
     .stencil-48 {
       font-family: "Atami", sans-serif;
       color: var(--white);
-      font-size: 48px;
+      font-size: clamp(24px, 3.333vw, 48px);
       font-style: normal;
       font-weight: bold;
       letter-spacing: -0.017em;
@@ -94,7 +94,7 @@ const style = css`
     .stencil-128 {
       font-family: 'a Atmospheric', sans-serif;
       color: var(--white);
-      font-size: 128px;
+      font-size: clamp(48px, 8.89vw, 128px);
       font-style: normal;
       font-weight: normal;
       text-align: center;

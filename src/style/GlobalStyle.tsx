@@ -100,6 +100,16 @@ const style = css`
       text-align: center;
       letter-spacing: -0.017em;
     }
+    
+    .logo-128 {
+      font-family: 'Sango', sans-serif;
+      color: var(--white);
+      font-size: clamp(48px, 5vw, 96px);
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      letter-spacing: -0.017em;
+    }
   }
   
   @font-face {

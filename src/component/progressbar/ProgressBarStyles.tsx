@@ -18,7 +18,7 @@ export const FillingLine = styled.div<{ color?: string, progress: number }>`
   left: 0;
   //transform: translate(0, -50%);
   min-width: ${({ progress }) => `${ progress }%`};
-  transition: min-width ease-out 0.14s;
+  transition: min-width ease-out 0.05s;
   background: ${({ color }) => color ? color : "var(--white)"};
   border-radius: 1rem;
 `;

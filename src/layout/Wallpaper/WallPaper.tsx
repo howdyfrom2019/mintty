@@ -27,9 +27,12 @@ const WallPaper = () => {
 
   return (
     <WallpaperLayout ref={scrollRef}>
-      {splashLoadingProgress !== 1 && <Splash
-        callbackProgress={progress => onChangeLoading(progress)}
-        callbackImgWidth={width => onSetImgWidth(width)}/>}
+      {/*{splashLoadingProgress !== 1 && <Splash*/}
+      {/*  callbackProgress={progress => onChangeLoading(progress)}*/}
+      {/*  callbackImgWidth={width => onSetImgWidth(width)}/>}*/}
+      <Splash
+          callbackProgress={progress => onChangeLoading(progress)}
+          callbackImgWidth={width => onSetImgWidth(width)}/>
       <ImageContainer
         width={imgWidth}
         height={imgRef.current?.clientHeight}

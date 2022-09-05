@@ -60,12 +60,12 @@ export const Tint = styled.div`
   .bottomContainer {
     width: 720px;
     position: absolute;
-    transform: translateY(100%);
+    bottom: clamp(0px, 1.667vw, 24px);
   }
   
   .progressBar {
     margin: ${({ theme }) => {
-      return `${theme.fontSizes.md} auto ${theme.fontSizes.xl} auto`;
+      return `${theme.fontSizes.md} auto clamp(36px, 4.44vw, ${theme.fontSizes.xl}) auto`;
     }};
   }
   
@@ -73,7 +73,7 @@ export const Tint = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: clamp(18px, 2.22vw, 32px);
     text-align: center;
   }
 `;

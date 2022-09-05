@@ -9,15 +9,36 @@ export const WallpaperLayout = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  
+  .zoomAnimation {
+    animation-name: zoom;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    transition: all ease-out 1s;
+  }
+  
+  @keyframes scroll-up {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    to {
+      opacity: 0;
+      transform: scale(1.2);
+    }
+  }
 `;
 
 export const ImageContainer = styled.div<ImageContainerProps>`
   width: 100vw;
   height: ${({ progress }) => {
-    return progress === 1 ? "250vh" : "auto";
+    return progress === 1 ? "150vh" : "auto";
   }};
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   transform-origin: top center;
@@ -34,7 +55,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     display: block;
     object-fit: cover;
     margin: 0 auto;
-    height: 250vh;
+    height: 150vh;
   }
   
   & > img.side {
@@ -50,8 +71,25 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     transform: rotateY(180deg) translateX(-98%);
   }
   
+  & > svg {
+    position: absolute;
+    bottom: 44vh;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 97;
+  }
+  
   & > img.target {
     bottom: 0;
-    //left: 50%;
+    width: 37vh;
+    height: auto;
+    z-index: 99;
+  }
+  
+  .logo-128 {
+    z-index: 99;
+    position: absolute;
+    bottom: 50vh;
+    left: 49vw;
   }
 `;

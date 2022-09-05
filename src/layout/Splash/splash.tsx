@@ -28,10 +28,11 @@ const IceBreakingTexts = [
 ];
 
 interface Props {
+  className?: string;
   callbackProgress?: (progress: number) => void;
   callbackImgWidth: (width: number) => void;
 }
-const Splash: React.FC<Props> = ({ callbackProgress, callbackImgWidth }) => {
+const Splash: React.FC<Props> = ({ className, callbackProgress, callbackImgWidth }) => {
   const [progress, setProgress] = useState(0);
   const [iceBreakingIndex , setIceBreakingIndex] = useState(0);
   const tintRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,7 @@ const Splash: React.FC<Props> = ({ callbackProgress, callbackImgWidth }) => {
   }, [progress]);
 
   return (
-    <SplashWrapper>
+    <SplashWrapper className={className}>
       <Tint ref={tintRef}>
         <CountUp
           className={"stencil-128"}

@@ -17,23 +17,42 @@ export const WallpaperLayout = styled.div`
     transition: all ease-out 1s;
   }
   
-  @keyframes scroll-up {
+  .bottomUpAnimation {
+    animation: bottom-up;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes zoom {
     from {
       opacity: 1;
       transform: scale(1);
+      height: 100vh;
     }
     
     to {
       opacity: 0;
       transform: scale(1.2);
+      height: auto;
+    }
+  }
+
+  @keyframes bottom-up {
+    from {
+      margin-top: 100vh;
+    }
+
+    to {
+      margin-top: 0;
     }
   }
 `;
 
 export const ImageContainer = styled.div<ImageContainerProps>`
+  margin-top: 100vh;
   width: 100vw;
   height: ${({ progress }) => {
-    return progress === 1 ? "150vh" : "auto";
+    return progress === 1 ? "calc(100vh + 64px)" : "auto";
   }};
   overflow: hidden;
   position: fixed;
@@ -55,12 +74,16 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     display: block;
     object-fit: cover;
     margin: 0 auto;
-    height: 150vh;
+    z-index: 96;
+    width: 50vw;
+    //height: calc(100vh + 64px);
   }
   
   & > img.side {
     filter: blur(1rem);
     margin: -1.5rem -2rem;
+    width: 33.33vw;
+    z-index: 95;
   }
   
   .left {
@@ -71,25 +94,60 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     transform: rotateY(180deg) translateX(-98%);
   }
   
-  & > svg {
-    position: absolute;
-    bottom: 44vh;
-    left: 50%;
-    transform: translate(-50%);
-    z-index: 97;
-  }
-  
-  & > img.target {
+  .centerImageDivision {
+    position: relative;
     bottom: 0;
-    width: 37vh;
-    height: auto;
-    z-index: 99;
-  }
-  
-  .logo-128 {
-    z-index: 99;
-    position: absolute;
-    bottom: 50vh;
-    left: 49vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    
+    .logoContainer {
+      position: absolute;
+      bottom: 50vh;
+      width: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > svg {
+        //position: absolute;
+        //bottom: 50vh;
+        z-index: 97;
+        transform: translateY(5vh);
+        //width: 55vh;
+      }
+
+      .logo-128 {
+        z-index: 99;
+        width: 45vh;
+        position: absolute;
+        transform: translateY(5vh);
+        //bottom: 59vh;
+      }
+    }
+
+    & > img.target {
+      bottom: 0;
+      transform: translateY(5vh);
+      width: 37vh;
+      height: auto;
+      z-index: 98;
+    }
+
+    .stencil-title-24 {
+      position: absolute;
+      bottom: 45vh;
+      width: 70vh;
+      transform-origin: center center;
+      z-index: 100;
+      white-space: pre-line;
+    }
   }
 `;

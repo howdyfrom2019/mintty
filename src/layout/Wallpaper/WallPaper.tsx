@@ -35,16 +35,22 @@ const WallPaper = () => {
         callbackProgress={progress => onChangeLoading(progress)}
         callbackImgWidth={width => onSetImgWidth(width)}/>
       <ImageContainer
+        className={`${splashLoadingProgress === 1 && "bottomUpAnimation"}`}
         width={imgWidth}
         height={imgRef.current?.clientHeight}
         progress={splashLoadingProgress}>
         <Tint style={{ backgroundColor: "rgba(0, 0, 0, 0.34)", zIndex: 98 }} />
-        <img className={`left side`} src={Background} alt={"background"} />
+        <img className={`left side`} src={Background} alt={"background"} style={{ marginRight: "10vw"}}/>
         <img src={Background} alt={"background"} ref={imgRef}/>
-        <img className={`right side`} src={Background} alt={"background"} />
-        <Frame />
-        <img className={"target"} src={Target} alt={"target"} />
-        <Logo className={"logo-128"}/>
+        <img className={`right side`} src={Background} alt={"background"} style={{ marginLeft: "10vw"}} />
+        <div className={"centerImageDivision"}>
+          <div className={"logoContainer"}>
+            <Frame />
+            <Logo className={"logo-128"}/>
+          </div>
+          <img className={"target"} src={Target} alt={"target"} />
+          <span className={"stencil-title-24"}>THE LITTEST AND EASIEST NFT GUIDE</span>
+        </div>
       </ImageContainer>
     </WallpaperLayout>
   );

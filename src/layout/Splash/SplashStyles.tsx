@@ -9,6 +9,7 @@ export const SplashWrapper = styled.div`
   justify-content: center;
   transform-origin: top center;
   user-select: none;
+  z-index: 99;
   
   ::after {
     content: "";

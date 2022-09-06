@@ -75,7 +75,7 @@ const style = css`
     .stencil-title-24 {
       font-family: 'a Atmospheric', sans-serif;
       color: var(--white);
-      font-size: clamp(12px, 1.667vw, 24px);
+      font-size: clamp(12px, 0.2vh, 24px);
       font-style: normal;
       font-weight: normal;
       text-align: center;

@@ -25,3 +25,6 @@ yarn-error.log*
 
 #fonts
 /src/assets/fonts
+
+#webstorm setting.
+/.idea

@@ -1,11 +1,34 @@
 import styled from "@emotion/styled";
 
-const LineWrapper = styled.div`
+interface LineProps {
+  isVertical?: boolean;
+  color?: string;
+}
+
+export const LineWrapper = styled.div`
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   
 `;
-const LineDivider = styled.div<{ isVertical?: boolean }>`
-  
+
+export const LineBody = styled.span<LineProps>`
+  width: 100%;
+  height: 4px;
+  border-radius: 1rem;
+  filter: drop-shadow(0, 0, 12px, var(--highlight));
+  transform-origin: left top;
+  ${(props) => props.isVertical && (
+    `transform: rotate(90deg)`
+  )};
+  background-color: ${({ color }) => color ? color : `var(--white)`};
+`;
+
+export const Blur = styled(LineBody)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(2px);
 `;

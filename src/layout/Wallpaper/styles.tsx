@@ -39,7 +39,7 @@ export const WallpaperLayout = styled.div`
 
   @keyframes bottom-up {
     from {
-      margin-top: 100vh;
+      margin-top: 50vh;
     }
 
     to {
@@ -119,7 +119,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
       & > svg {
         //position: absolute;
         //bottom: 50vh;
-        z-index: 97;
+        z-index: 98;
         transform: translateY(5vh);
         //width: 55vh;
       }
@@ -143,11 +143,33 @@ export const ImageContainer = styled.div<ImageContainerProps>`
 
     .stencil-title-24 {
       position: absolute;
-      bottom: 45vh;
-      width: 70vh;
+      bottom: 43vh;
       transform-origin: center center;
       z-index: 100;
       white-space: pre-line;
     }
+  }
+  
+  & > div.verticalLine {
+    position: absolute;
+    top: 25%;
+    left: 3vw;
+    z-index: 99;
+    width: 40vh;
+  }
+`;
+
+export const LeftNav = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin: 10vh 4vw;
+  z-index: 99;
+  
+  & > a {
+    text-decoration: none;
   }
 `;

@@ -1,11 +1,13 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {ImageContainer, WallpaperLayout} from "./styles";
+import {ImageContainer, LeftNav, WallpaperLayout} from "./styles";
 import Splash from "../Splash/splash";
 import Background from "../../assets/img/original.jpg";
 import Target from "../../assets/img/target.gif";
 import {Tint} from "../Splash/SplashStyles";
 import { ReactComponent as Frame } from "../../assets/svg/frame.svg";
 import { ReactComponent as Logo } from "../../assets/svg/Logo_white.svg";
+import Line from "../../component/line/Line";
+import {NavLink} from "react-router-dom";
 
 const WallPaper = () => {
   const [splashLoadingProgress, setSplashLoadingProgress] = useState(0);
@@ -51,6 +53,12 @@ const WallPaper = () => {
           <img className={"target"} src={Target} alt={"target"} />
           <span className={"stencil-title-24"}>THE LITTEST AND EASIEST NFT GUIDE</span>
         </div>
+        <Line className={"verticalLine"} isVertical />
+        <LeftNav>
+          <NavLink className={"bold-24"} to={"/guide"}>GUIDE</NavLink>
+          <NavLink className={"bold-24"} to={"/mintty"}>MINTTY</NavLink>
+          <NavLink className={"bold-24"} to={"/sources"}>SOURCES</NavLink>
+        </LeftNav>
       </ImageContainer>
     </WallpaperLayout>
   );

@@ -165,11 +165,18 @@ export const LeftNav = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  margin: 10vh 4vw;
+  gap: 4.23vmin;
+  margin: 4vw;
+  transform: translateY(-50%);
   z-index: 99;
   
   & > a {
     text-decoration: none;
+    border-radius: 1rem;
+    padding: 0 12px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
   }
 `;

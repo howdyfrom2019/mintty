@@ -8,6 +8,7 @@ import { ReactComponent as Frame } from "../../assets/svg/frame.svg";
 import { ReactComponent as Logo } from "../../assets/svg/Logo_white.svg";
 import Line from "../../component/line/Line";
 import {NavLink} from "react-router-dom";
+import Button from "../../component/button/button";
 
 const WallPaper = () => {
   const [splashLoadingProgress, setSplashLoadingProgress] = useState(0);
@@ -52,6 +53,7 @@ const WallPaper = () => {
           </div>
           <img className={"target"} src={Target} alt={"target"} />
           <span className={"stencil-title-24"}>THE LITTEST AND EASIEST NFT GUIDE</span>
+          <Button content={"scroll down"} className={"stencil-48"} style={{ position: "absolute", bottom: "4vw", zIndex: 100, border: "none", whiteSpace: "nowrap" }} />
         </div>
         <Line className={"verticalLine"} isVertical />
         <LeftNav>

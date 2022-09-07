@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { BlobButton } from "./buttonStyles";
 
+export type btnType = "default" | "text";
+
 interface Props {
+  className?: string;
   content: string;
   animation?: boolean;
+  style?: CSSProperties;
+  btnType?: btnType;
 }
 
-const Button: React.FC<Props> = ({ content, animation }) => {
+const Button: React.FC<Props> = ({ className, content, animation, style, btnType }) => {
   return (
-    <BlobButton animation={animation}>
-      <span className={"stencil-24"}>{content}</span>
+    <BlobButton className={className ? className : "stencil-24"} animation={animation} style={style}>
+      <span>{content}</span>
     </BlobButton>
   )
 };

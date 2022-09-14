@@ -9,8 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/"} element={<WallPaper />} />
-        {/*<Route path={"/docs"} element={<Docs />} />*/}
+        <Route path={"/"} element={<WallPaper />}>
+          <Route path={"/"} element={<WallPaper />} />
+          <Route path={"/docs"} element={<WallPaper />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

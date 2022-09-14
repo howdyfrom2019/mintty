@@ -17,10 +17,32 @@ export const WallpaperLayout = styled.div`
     transition: all ease-out 1s;
   }
   
+  .transition-wrapper {
+    position: relative;
+  }
+  
   .bottomUpAnimation {
     animation: bottom-up;
     animation-duration: 1.2s;
     animation-fill-mode: both;
+  }
+
+  .right-enter {
+    transform: translateX(100%);
+  }
+
+  .right-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .right-exit {
+    transform: translateX(0);
+  }
+
+  .right-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in-out;
   }
   
   @keyframes zoom {

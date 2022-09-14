@@ -98,7 +98,7 @@ const style = css`
       color: var(--white);
       font-size: clamp(24px, 3.333vw, 48px);
       font-style: normal;
-      font-weight: bold;
+      font-weight: normal;
       letter-spacing: -0.017em;
     }
     

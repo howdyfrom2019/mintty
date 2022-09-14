@@ -9,11 +9,12 @@ interface Props {
   animation?: boolean;
   style?: CSSProperties;
   btnType?: btnType;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-const Button: React.FC<Props> = ({ className, content, animation, style, btnType }) => {
+const Button: React.FC<Props> = ({ className, content, animation, style, btnType, onClick }) => {
   return (
-    <BlobButton className={className ? className : "stencil-24"} animation={animation} style={style}>
+    <BlobButton onClick={onClick} className={className ? className : "stencil-24"} animation={animation} style={style} btnType={btnType || "default"}>
       <span>{content}</span>
     </BlobButton>
   )

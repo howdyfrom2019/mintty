@@ -7,8 +7,10 @@ import {Tint} from "../Splash/SplashStyles";
 import { ReactComponent as Frame } from "../../assets/svg/frame.svg";
 import { ReactComponent as Logo } from "../../assets/svg/Logo_white.svg";
 import Line from "../../component/line/Line";
-import {NavLink} from "react-router-dom";
+import { NavLink, Routes, Route } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Button from "../../component/button/button";
+import Docs from "../Docs/Docs";
 
 const WallPaper = () => {
   const [splashLoadingProgress, setSplashLoadingProgress] = useState(0);
@@ -57,11 +59,17 @@ const WallPaper = () => {
         </div>
         <Line className={"verticalLine"} isVertical />
         <LeftNav>
-          <NavLink className={"bold-24"} to={"/guide"}>GUIDE</NavLink>
+          <NavLink className={"bold-24"} to={"/docs"}>GUIDE</NavLink>
           <NavLink className={"bold-24"} to={"/mintty"}>MINTTY</NavLink>
           <NavLink className={"bold-24"} to={"/sources"}>SOURCES</NavLink>
         </LeftNav>
       </ImageContainer>
+      <div>
+        <Routes>
+          <Route path={"/docs"} element={<Docs />} />
+        </Routes>
+      </div>
+
     </WallpaperLayout>
   );
 }

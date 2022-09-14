@@ -40,7 +40,7 @@ const WallPaper = () => {
         <CSSTransition key={location.pathname} timeout={300} classNames={"right"}>
           <Routes location={location}>
             <Route path={"/"} element={
-              <>
+              <div style={{ position: "absolute" }}>
                 <Splash
                   className={`${splashLoadingProgress === 1 && "zoomAnimation"}`}
                   // callbackProgress={progress => onChangeLoading(progress)}
@@ -70,7 +70,7 @@ const WallPaper = () => {
                     <NavLink className={"bold-24"} to={"/sources"}>SOURCES</NavLink>
                   </LeftNav>
                 </ImageContainer>
-              </>
+              </div>
             } />
             <Route path={"/docs"} element={<Docs />} />
           </Routes>

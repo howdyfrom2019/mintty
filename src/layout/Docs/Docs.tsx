@@ -12,10 +12,11 @@ const Docs = () => {
       <div className={"nav"}>
         <Logo />
         <Button
-          content={"link with MetaMask"}
           btnType={"default"}
           animation
-          onClick={(e) => console.log(window.ethereum.isMetaMask)} />
+          onClick={(e) => console.log(window.ethereum.isMetaMask)}>
+          Link With MetaMsk
+        </Button>
       </div>
     </DocsDivider>
   );

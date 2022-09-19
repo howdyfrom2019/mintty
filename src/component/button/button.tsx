@@ -5,17 +5,17 @@ export type btnType = "default" | "text";
 
 interface Props {
   className?: string;
-  content: string;
+  children?: React.ReactNode;
   animation?: boolean;
   style?: CSSProperties;
   btnType?: btnType;
-  onClick?: (e: React.MouseEvent) => void;
+  onClick?: (e?: React.MouseEvent) => void;
 }
 
-const Button: React.FC<Props> = ({ className, content, animation, style, btnType, onClick }) => {
+const Button: React.FC<Props> = ({ className, children, animation, style, btnType, onClick }) => {
   return (
     <BlobButton onClick={onClick} className={className ? className : "stencil-24"} animation={animation} style={style} btnType={btnType || "default"}>
-      <span>{content}</span>
+      <span>{children}</span>
     </BlobButton>
   )
 };

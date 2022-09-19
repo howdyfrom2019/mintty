@@ -181,7 +181,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
   }
 `;
 
-export const LeftNav = styled.div`
+export const LeftNav = styled.nav`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -199,6 +199,30 @@ export const LeftNav = styled.div`
 
     &:hover {
       background: rgba(255, 255, 255, 0.2);
+    }
+  }
+`;
+
+export const RightNav = styled.aside`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  margin-bottom: 2vw;
+  gap: 4.23vmin;
+  align-items: center;
+  z-index: 99;
+  
+  & > div.flex-row {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+    & > svg {
+      cursor: pointer;
     }
   }
 `;

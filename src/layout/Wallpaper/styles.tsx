@@ -137,6 +137,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all ease-out 0.14s;
 
       & > svg {
         //position: absolute;

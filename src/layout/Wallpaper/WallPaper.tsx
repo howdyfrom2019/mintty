@@ -15,6 +15,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Button from "../../component/button/button";
 import Docs from "../Docs/Docs";
 import Stamp from "../../component/stamp/Stamp";
+import useMouseInteractive from "../../utils/useMouseInteractive";
 
 const WallPaper = () => {
   const navigator = useNavigate();
@@ -23,6 +24,10 @@ const WallPaper = () => {
   const [imgWidth, setImgWidth] = useState(720);
   const scrollRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+  const frameRef = useRef<SVGSVGElement>(null);
+  const logoRef = useRef<SVGSVGElement>(null);
+  useMouseInteractive(frameRef, 16);
+  useMouseInteractive(logoRef, 9);
 
   const onChangeLoading = useCallback((progress: number) => {
       setSplashLoadingProgress(progress);
@@ -65,8 +70,8 @@ const WallPaper = () => {
                   <img className={`right side`} src={Background} alt={"background"} style={{ marginLeft: "10vw"}} />
                   <div className={"centerImageDivision"}>
                     <div className={"logoContainer"}>
-                      <Frame />
-                      <Logo className={"logo-128"}/>
+                      <Frame ref={frameRef} />
+                      <Logo className={"logo-128"} ref={logoRef}/>
                     </div>
                     <img className={"target"} src={Target} alt={"target"} />
                     <span className={"stencil-title-24"}>THE LITTEST AND EASIEST NFT GUIDE</span>

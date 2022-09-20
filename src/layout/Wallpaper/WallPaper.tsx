@@ -14,7 +14,7 @@ import Docs from "../Docs/Docs";
 
 const WallPaper = () => {
   const location = useLocation();
-  const [splashLoadingProgress, setSplashLoadingProgress] = useState(1);
+  const [splashLoadingProgress, setSplashLoadingProgress] = useState(0);
   const [imgWidth, setImgWidth] = useState(720);
   const scrollRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -43,7 +43,7 @@ const WallPaper = () => {
               <div style={{ position: "absolute" }}>
                 <Splash
                   className={`${splashLoadingProgress === 1 && "zoomAnimation"}`}
-                  // callbackProgress={progress => onChangeLoading(progress)}
+                  callbackProgress={progress => onChangeLoading(progress)}
                   callbackImgWidth={width => onSetImgWidth(width)}/>
                 <ImageContainer
                   className={`${splashLoadingProgress === 1 && "bottomUpAnimation"}`}

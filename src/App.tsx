@@ -12,6 +12,7 @@ function App() {
         <Route path={"/"} element={<WallPaper />}>
           <Route path={"/"} element={<WallPaper />} />
           <Route path={"/docs"} element={<WallPaper />} />
+          <Route path={"/docs/:language"} element={<WallPaper />} />
         </Route>
       </Routes>
     </BrowserRouter>

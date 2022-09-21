@@ -41,6 +41,56 @@ const WallPaper = () => {
     navigator("/docs");
   }, [navigator]);
 
+  const MainPage = () => {
+    return (
+      <div style={{ position: "absolute" }}>
+        <Splash
+          className={`${splashLoadingProgress === 1 && "zoomAnimation"}`}
+          callbackProgress={progress => onChangeLoading(progress)}
+          callbackImgWidth={width => onSetImgWidth(width)}/>
+        <ImageContainer
+          className={`${splashLoadingProgress === 1 && "bottomUpAnimation"}`}
+          width={imgWidth}
+          height={imgRef.current?.clientHeight}
+          progress={splashLoadingProgress}>
+          <Tint style={{ backgroundColor: "rgba(0, 0, 0, 0.34)", zIndex: 98 }} />
+          <img className={`left side`} src={Background} alt={"background"} style={{ marginRight: "10vw"}}/>
+          <img src={Background} alt={"background"} ref={imgRef}/>
+          <img className={`right side`} src={Background} alt={"background"} style={{ marginLeft: "10vw"}} />
+          <div className={"centerImageDivision"}>
+            <div className={"logoContainer"}>
+              <Frame ref={frameRef} />
+              <Logo className={"logo-128"} ref={logoRef}/>
+            </div>
+            <img className={"target"} src={Target} alt={"target"} />
+            <span className={"stencil-title-24"}>THE LITTEST AND EASIEST NFT GUIDE</span>
+            <Button
+              className={"stencil-48"}
+              style={{ position: "absolute", bottom: "4vw", zIndex: 100, border: "none", whiteSpace: "nowrap" }}
+              onClick={moveToGuide}
+            >
+              Next -&gt;
+            </Button>
+          </div>
+          <Line className={"verticalLine"} isVertical />
+          <LeftNav>
+            <NavLink className={"bold-24"} to={"/docs"}>GUIDE</NavLink>
+            <NavLink className={"bold-24"} to={"/mintty"}>MINTTY</NavLink>
+            <NavLink className={"bold-24"} to={"/sources"}>SOURCES</NavLink>
+          </LeftNav>
+          <RightNav>
+            <Stamp />
+            <div className={"flex-row"}>
+              <Github />
+              <Discord />
+              <Twitter />
+            </div>
+          </RightNav>
+        </ImageContainer>
+      </div>
+    )
+  };
+
   // useEffect(() => {
   //   if (!scrollRef.current) return;
   //   if (splashLoadingProgress === 1) {
@@ -53,54 +103,9 @@ const WallPaper = () => {
       <TransitionGroup className={"transition-wrapper"}>
         <CSSTransition key={location.pathname} timeout={300} classNames={"right"}>
           <Routes location={location}>
-            <Route path={"/"} element={
-              <div style={{ position: "absolute" }}>
-                <Splash
-                  className={`${splashLoadingProgress === 1 && "zoomAnimation"}`}
-                  callbackProgress={progress => onChangeLoading(progress)}
-                  callbackImgWidth={width => onSetImgWidth(width)}/>
-                <ImageContainer
-                  className={`${splashLoadingProgress === 1 && "bottomUpAnimation"}`}
-                  width={imgWidth}
-                  height={imgRef.current?.clientHeight}
-                  progress={splashLoadingProgress}>
-                  <Tint style={{ backgroundColor: "rgba(0, 0, 0, 0.34)", zIndex: 98 }} />
-                  <img className={`left side`} src={Background} alt={"background"} style={{ marginRight: "10vw"}}/>
-                  <img src={Background} alt={"background"} ref={imgRef}/>
-                  <img className={`right side`} src={Background} alt={"background"} style={{ marginLeft: "10vw"}} />
-                  <div className={"centerImageDivision"}>
-                    <div className={"logoContainer"}>
-                      <Frame ref={frameRef} />
-                      <Logo className={"logo-128"} ref={logoRef}/>
-                    </div>
-                    <img className={"target"} src={Target} alt={"target"} />
-                    <span className={"stencil-title-24"}>THE LITTEST AND EASIEST NFT GUIDE</span>
-                    <Button
-                      className={"stencil-48"}
-                      style={{ position: "absolute", bottom: "4vw", zIndex: 100, border: "none", whiteSpace: "nowrap" }}
-                      onClick={moveToGuide}
-                    >
-                      Next -&gt;
-                    </Button>
-                  </div>
-                  <Line className={"verticalLine"} isVertical />
-                  <LeftNav>
-                    <NavLink className={"bold-24"} to={"/docs"}>GUIDE</NavLink>
-                    <NavLink className={"bold-24"} to={"/mintty"}>MINTTY</NavLink>
-                    <NavLink className={"bold-24"} to={"/sources"}>SOURCES</NavLink>
-                  </LeftNav>
-                  <RightNav>
-                    <Stamp />
-                    <div className={"flex-row"}>
-                      <Github />
-                      <Discord />
-                      <Twitter />
-                    </div>
-                  </RightNav>
-                </ImageContainer>
-              </div>
-            } />
+            <Route path={"/"} element={<MainPage />}/>
             <Route path={"/docs"} element={<Docs />} />
+            <Route path={"/docs/:language"} element={<Docs />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

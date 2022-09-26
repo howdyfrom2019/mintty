@@ -18,30 +18,30 @@ import Stamp from "../../component/stamp/Stamp";
 import useMouseInteractive from "../../utils/useMouseInteractive";
 
 const WallPaper = () => {
-  const navigator = useNavigate();
   const location = useLocation();
-  const [splashLoadingProgress, setSplashLoadingProgress] = useState(1);
-  const [imgWidth, setImgWidth] = useState(720);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const frameRef = useRef<SVGSVGElement>(null);
-  const logoRef = useRef<SVGSVGElement>(null);
-  useMouseInteractive(frameRef, 16);
-  useMouseInteractive(logoRef, 9);
-
-  const onChangeLoading = useCallback((progress: number) => {
-      setSplashLoadingProgress(progress);
-  }, [setSplashLoadingProgress]);
-
-  const onSetImgWidth = useCallback((width: number) => {
-    setImgWidth(width);
-  }, [setImgWidth]);
-
-  const moveToGuide = useCallback(() => {
-    navigator("/docs");
-  }, [navigator]);
 
   const MainPage = () => {
+    const navigator = useNavigate();
+    const [splashLoadingProgress, setSplashLoadingProgress] = useState(1);
+    const [imgWidth, setImgWidth] = useState(720);
+    const imgRef = useRef<HTMLImageElement>(null);
+    const frameRef = useRef<SVGSVGElement>(null);
+    const logoRef = useRef<SVGSVGElement>(null);
+    useMouseInteractive(frameRef, 16);
+    useMouseInteractive(logoRef, 9);
+
+    const onChangeLoading = useCallback((progress: number) => {
+      setSplashLoadingProgress(progress);
+    }, [setSplashLoadingProgress]);
+
+    const onSetImgWidth = useCallback((width: number) => {
+      setImgWidth(width);
+    }, [setImgWidth]);
+
+    const moveToGuide = useCallback(() => {
+      navigator("/docs");
+    }, [navigator]);
     return (
       <div style={{ position: "absolute" }}>
         <Splash

@@ -7,11 +7,11 @@ const Docs = () => {
   const params = useParams();
   switch (params.language) {
     case "kr":
-      return <DocsEN />
-    case "en" || null:
-      return <DocsEN />
+      return <DocsEN />;
+    case "en" || undefined:
+      return <DocsEN />;
     default:
-      return <Docs404 language={params.language} />
+      return <Docs404 language={params.language} />;
   }
 }
 

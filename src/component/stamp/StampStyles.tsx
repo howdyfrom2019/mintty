@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const StampWrapper = styled.figure`
   position: relative;
-  width: 148px;
+  width: clamp(86px, 7.7vw, 148px);
   height: 100px;
   display: flex;
   flex-direction: column;

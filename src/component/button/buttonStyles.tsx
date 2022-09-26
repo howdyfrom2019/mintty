@@ -30,4 +30,11 @@ export const BlobButton = styled.button<Props>`
       box-shadow: 0.25rem 0.25rem var(--highlight);
     }
   `};
+  
+  & > span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;

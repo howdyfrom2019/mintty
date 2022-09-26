@@ -17,7 +17,7 @@ export const useMetaMask = (): [boolean, boolean, boolean] => {
 
   useEffect(() => {
     checkMetaMaskSetting();
-  }, []);
+  }, [checkMetaMaskSetting]);
 
   return [isMetaMaskInstalled, isChrome, isMobile];
 };

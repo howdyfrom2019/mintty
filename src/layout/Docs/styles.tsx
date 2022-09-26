@@ -15,3 +15,16 @@ export const DocsDivider = styled.div`
     align-items: center;
   }
 `;
+
+export const NotFoundDocs = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+`;

@@ -210,7 +210,7 @@ export const RightNav = styled.aside`
   right: 0;
   display: flex;
   flex-direction: column;
-  transform: translate(-50%, -50%);
+  transform: translate(-4.3vw, -50%);
   margin-bottom: 2vw;
   gap: 4.23vmin;
   align-items: center;

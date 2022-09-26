@@ -1,25 +1,18 @@
 import React from 'react';
-import { DocsDivider } from "./styles";
-import { ReactComponent as Logo } from "../../assets/svg/Logo.svg";
-import Button from "../../component/button/button";
-import {useMetaMask} from "../../utils/useMetaMask";
+import { useParams } from "react-router-dom";
+import DocsEN from "./component/DocsEN";
+import Docs404 from "./component/Docs404";
 
 const Docs = () => {
-  const [isMetaMaskInstalled, isChrome, isMobile] = useMetaMask();
-  console.log(isMetaMaskInstalled, isChrome, isMobile);
-  return (
-    <DocsDivider>
-      <div className={"nav"}>
-        <Logo />
-        <Button
-          btnType={"default"}
-          animation
-          onClick={(e) => console.log(window.ethereum.isMetaMask)}>
-          Link With MetaMsk
-        </Button>
-      </div>
-    </DocsDivider>
-  );
+  const params = useParams();
+  switch (params.language) {
+    case "kr":
+      return <DocsEN />
+    case "en" || null:
+      return <DocsEN />
+    default:
+      return <Docs404 language={params.language} />
+  }
 }
 
 export default Docs;

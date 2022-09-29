@@ -3,6 +3,7 @@ import {useMetaMask} from "../../../utils/useMetaMask";
 import {ReactComponent as Logo} from "../../../assets/svg/Logo.svg";
 import Button from "../../../component/button/button";
 import {DocsDivider} from "../styles";
+import ArticleNav from "../../../component/articlenav/ArticleNav";
 
 const DocsEN = () => {
   const [isMetaMaskInstalled, isChrome, isMobile] = useMetaMask();
@@ -33,16 +34,22 @@ const DocsEN = () => {
 
   return (
     <DocsDivider>
-      <div className={"nav"}>
+      <header className={"nav"}>
         <Logo />
-        <Button
-          btnType={"default"}
-          animation
-          style={{ maxWidth: 300 }}
-          onClick={connectWithMetaMask}>
-          {metaMaskAddress === "0x0" ? "Link With MetaMask" : metaMaskAddress}
-        </Button>
-      </div>
+        <div className={"button-container"}>
+          <Button btnType={"default"} animation>
+            EN
+          </Button>
+          <Button
+            btnType={"default"}
+            animation
+            style={{ maxWidth: 300 }}
+            onClick={connectWithMetaMask}>
+            {metaMaskAddress === "0x0" ? "Link With MetaMask" : metaMaskAddress}
+          </Button>
+        </div>
+      </header>
+      <ArticleNav style={{ width: 280 }} contents={[]} />
     </DocsDivider>
   );
 }

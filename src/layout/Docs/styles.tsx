@@ -7,11 +7,17 @@ export const DocsDivider = styled.div`
   margin-top: 60px;
   width: 100vw;
   
-  & > div.nav {
+  & > header.nav {
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: ${({ theme }) => theme.fontSizes.sm};
     align-items: center;
   }
 `;

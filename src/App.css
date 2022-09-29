@@ -59,7 +59,7 @@
 
 @font-face {
     font-family: Atami;
-    font-style: normal;
+    font-style: oblique;
     font-weight: normal;
     src: url("./assets/fonts/Atami-Stencil.otf")format("opentype");
     /*url("./assets/fonts/Atami-Stencil.woff")format("woff"),*/
@@ -69,7 +69,7 @@
 
 @font-face {
     font-family: Atami;
-    font-style: normal;
+    font-style: oblique;
     font-weight: bold;
     src: url("./assets/fonts/Atami-Stencil-Bold.otf")format("opentype");
     /*url("./assets/fonts/Atami-Stencil-Bold.woff")format("woff"),*/

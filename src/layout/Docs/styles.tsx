@@ -8,11 +8,12 @@ export const DocsDivider = styled.div`
   width: 100vw;
   
   & > header.nav {
-    width: 100vw;
+    width: 75vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto 5.6vw auto;
   }
   
   .button-container {
@@ -33,4 +34,34 @@ export const NotFoundDocs = styled.div`
   align-items: center;
   justify-content: center;
   transform: translateX(-50%);
+`;
+
+export const ArticleLayout = styled.section`
+  display: flex;
+  width: 75vw;
+  margin: 0 auto;
+  gap: clamp(12px, 2vw, 20px);
+  
+  .article-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(36px, 4.44vw, 64px);
+    flex: 2;
+    
+    .stencil-64 {
+      margin-bottom: clamp(24px, 3.333vw, 48px);
+    }
+    
+    .bold-36 {
+      margin-bottom: clamp(12px, 1.667vw, 24px);
+    }
+    
+    .bold-48 {
+      margin-bottom: clamp(24px, 3.333vw, 48px);
+    }
+  }
+  
+  .aside-nav {
+    
+  }
 `;

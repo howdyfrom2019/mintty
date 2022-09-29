@@ -17,7 +17,12 @@ import Docs from "../Docs/Docs";
 import Stamp from "../../component/stamp/Stamp";
 import useMouseInteractive from "../../utils/useMouseInteractive";
 
-const WallPaper = () => {
+interface Props {
+  isFirstVisited?: boolean;
+  callback?: () => void;
+}
+
+const WallPaper: React.FC<Props> = ({ isFirstVisited, callback }) => {
   const location = useLocation();
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +37,7 @@ const WallPaper = () => {
     useMouseInteractive(logoRef, 9);
 
     const onChangeLoading = useCallback((progress: number) => {
-      setSplashLoadingProgress(progress);
+      setSplashLoadingProgress(progress === 1 ? 2 : progress);
     }, [setSplashLoadingProgress]);
 
     const onSetImgWidth = useCallback((width: number) => {
@@ -42,12 +47,19 @@ const WallPaper = () => {
     const moveToGuide = useCallback(() => {
       navigator("/docs");
     }, [navigator]);
+
+    useEffect(() => {
+      if (splashLoadingProgress > 1 && isFirstVisited && callback) callback();
+    }, [splashLoadingProgress]);
+
     return (
       <div style={{ position: "absolute" }}>
-        <Splash
-          className={`${splashLoadingProgress === 1 && "zoomAnimation"}`}
-          callbackProgress={progress => onChangeLoading(progress)}
-          callbackImgWidth={width => onSetImgWidth(width)}/>
+        {isFirstVisited &&
+            <Splash
+              className={`${splashLoadingProgress === 1 && "zoomAnimation"}`}
+              callbackProgress={progress => onChangeLoading(progress)}
+              callbackImgWidth={width => onSetImgWidth(width)} />
+        }
         <ImageContainer
           className={`${splashLoadingProgress === 1 && "bottomUpAnimation"}`}
           width={imgWidth}
@@ -90,13 +102,6 @@ const WallPaper = () => {
       </div>
     )
   };
-
-  // useEffect(() => {
-  //   if (!scrollRef.current) return;
-  //   if (splashLoadingProgress === 1) {
-  //     window.scrollTo({ top: 720, behavior: "smooth"})
-  //   }
-  // }, [splashLoadingProgress]);
 
   return (
     <WallpaperLayout ref={scrollRef}>

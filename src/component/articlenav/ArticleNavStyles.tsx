@@ -11,6 +11,7 @@ export const ArticleNavDivider = styled.aside`
   
   & > a {
     text-decoration: none;
+    padding: 0 24px;
   }
   
   .blur {

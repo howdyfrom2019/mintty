@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {useMetaMask} from "../../../utils/useMetaMask";
 import {ReactComponent as Logo} from "../../../assets/svg/Logo.svg";
 import Button from "../../../component/button/button";
-import {DocsDivider} from "../styles";
+import {ArticleLayout, DocsDivider} from "../styles";
 import ArticleNav from "../../../component/articlenav/ArticleNav";
 
 const DocsEN = () => {
@@ -49,7 +49,20 @@ const DocsEN = () => {
           </Button>
         </div>
       </header>
-      <ArticleNav style={{ width: 280 }} contents={[]} />
+      <ArticleLayout>
+        <section className={"article-wrapper"}>
+          <span className={`stencil-64`}>Ahoooy!🥌</span>
+          <span className={`normal-24`}>This web provides you with free minting functions very easily WITHOUT any difficult words.
+            <br /><br />I hope this web would be a bunch of kinder service than any other Web3.0 sites.</span>
+        </section>
+        <ArticleNav
+          className={"aside-nav"}
+          style={{ flex: 1 }}
+          glowEffect
+          upperLine
+          underLine
+          contents={[]} />
+      </ArticleLayout>
     </DocsDivider>
   );
 }

@@ -144,6 +144,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
         //bottom: 50vh;
         z-index: 98;
         transform: translateY(5vh);
+        transition: all ease-out 0.14s;
         //width: 55vh;
       }
 

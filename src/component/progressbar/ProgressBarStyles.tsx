@@ -11,14 +11,14 @@ export const TransparentLine = styled.div<{ color?: string}>`
   align-items: center;
 `;
 
-export const FillingLine = styled.div<{ color?: string, progress: number }>`
+export const FillingLine = styled.div<{ color?: string }>`
   position: absolute;
   height: 10px;
   top: 0;
   left: 0;
   //transform: translate(0, -50%);
-  min-width: ${({ progress }) => `${ progress }%`};
-  transition: min-width ease-out 0.05s;
+  min-width: 0;
+  //transition: min-width ease-out 0.05s;
   background: ${({ color }) => color ? color : "var(--white)"};
   border-radius: 1rem;
 `;

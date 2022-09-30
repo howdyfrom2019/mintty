@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { FillingLine, TransparentLine } from "./ProgressBarStyles";
 
 interface Props {
@@ -8,10 +8,13 @@ interface Props {
 }
 
 const ProgressBar: React.FC<Props> = ({ className, color, progress }) => {
-  const [lineProgress, setLineProgress] = useState(0);
+  // const [lineProgress, setLineProgress] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   const fillLine = useCallback(() => {
-    setLineProgress(progress);
+    // setLineProgress(progress);
+    if (!ref.current) return;
+    ref.current.style.minWidth = `${progress}%`;
     window.requestAnimationFrame(fillLine);
   }, [progress]);
 
@@ -20,7 +23,7 @@ const ProgressBar: React.FC<Props> = ({ className, color, progress }) => {
   }, [fillLine]);
   return (
     <TransparentLine className={ className } color={color}>
-      <FillingLine color={color} progress={lineProgress} />
+      <FillingLine color={color} ref={ref} />
     </TransparentLine>
   );
 };

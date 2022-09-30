@@ -81,7 +81,7 @@ const DocsEN = () => {
             </ul>
             <br />
             <span className={"normal-24"}>
-              If you wanna set up such a kind of abvoe envs, please click each
+              If you wanna set up such a kind of above envs, please click each
               hyperlink and read a full guide. </span>
           </span>
         </section>

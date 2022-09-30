@@ -34,7 +34,8 @@ const CountUp: React.FC<Props> = (
     const counter = setInterval(() => {
       const progress = currentCount.current / end - (start ? start : 0);
       const upVal = increasingUnit.current * Math.pow(easeOutQuad(progress), 2);
-      currentCount.current += upVal === 0 ? 1 : (progress >= 0.96 ? upVal / (24 * progress) : upVal);
+      // currentCount.current += upVal === 0 ? 1 : (progress >= 0.96 ? upVal / (24 * progress) : upVal);
+      currentCount.current += upVal === 0 ? 1 : (progress >= 0.98 ? upVal / (5 * progress) : upVal);
       setCurrentProgress(progress);
 
       if (currentCount.current + upVal >= end) {

@@ -3,6 +3,7 @@ import React, {useCallback, useState} from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WallPaper from "./layout/Wallpaper/WallPaper";
+import Docs from "./layout/Docs/Docs";
 
 function App() {
   const [firstSplash, isFirstSplash] = useState(true);
@@ -17,6 +18,7 @@ function App() {
           <Route path={"/docs"} element={<WallPaper />} />
           <Route path={"/docs/:language"} element={<WallPaper />} />
         </Route>
+        <Route path={"/docs"} element={<Docs />} />
       </Routes>
     </BrowserRouter>
   );

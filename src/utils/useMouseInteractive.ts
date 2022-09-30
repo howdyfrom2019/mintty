@@ -3,6 +3,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 const useMouseInteractive = (
   target:  React.RefObject<HTMLElement | SVGSVGElement>,
   targetsOffset: number,
+  originCenter?: boolean,
   speed = 0.01,
 ) => {
   const [x, setX] = useState(0);
@@ -12,7 +13,11 @@ const useMouseInteractive = (
 
   const makeAnimationWork = useCallback(() => {
       if (!target.current) return;
-      target.current.style.transform = `translate(${-(targetX) / targetsOffset}px, ${-(targetY) / targetsOffset}px)`;
+      if (originCenter) {
+        target.current.style.transform = `translate(calc(-50% + ${-(targetX) / targetsOffset}px), calc(-50% + ${-(targetY) / targetsOffset}px))`;
+      } else {
+        target.current.style.transform = `translate(${-(targetX) / targetsOffset}px, ${-(targetY) / targetsOffset}px)`;
+      }
 
     window.requestAnimationFrame(makeAnimationWork);
   }, [target, targetX, targetY, targetsOffset]);

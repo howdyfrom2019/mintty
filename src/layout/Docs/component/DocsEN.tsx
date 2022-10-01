@@ -22,7 +22,13 @@ const DocsEN = () => {
     }
   }, []);
 
+  const connectWithMetaMaskMobile = useCallback(() => {
+    const metaMaskAppDeepLink = "https://metamask.app.link/dapp/howdyfrom2019.github.io/mintty/";
+    window.open(metaMaskAppDeepLink, "_self");
+  }, []);
+
   const connectWithMetaMask = useCallback(async() => {
+    if (isMobile) connectWithMetaMaskMobile();
     if (!isMetaMaskInstalled && !isMobile) return;
     try {
       const account = await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -31,19 +37,20 @@ const DocsEN = () => {
       if (e.code === 4001) console.log("user rejected.");
       else console.log("please install ethereum");
     }
-  }, [isMetaMaskInstalled, isMobile]);
+  }, [connectWithMetaMaskMobile, isMetaMaskInstalled, isMobile]);
 
   const clearAccount = useCallback(() => {
     setMetaMaskAddress("0x0");
     console.log("address cleared");
   }, []);
 
-  useEffect(() => {
-    return () => {
-      window.ethereum.on("connect", connectWithMetaMask);
-      window.ethereum.on("disconnect", clearAccount);
-    }
-  }, [clearAccount, connectWithMetaMask]);
+  // useEffect(() => {
+  //   if (isMobile) return () => {};
+  //   else return () => {
+  //     window.ethereum.on("connect", connectWithMetaMask);
+  //     window.ethereum.on("disconnect", clearAccount);
+  //   }
+  // }, [isMobile, clearAccount, connectWithMetaMask, connectWithMetaMaskMobile]);
 
   return (
     <DocsDivider onWheel={showHeader}>

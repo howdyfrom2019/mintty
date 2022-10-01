@@ -53,7 +53,7 @@ export const NotFoundDocs = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 `;
 
 export const ArticleLayout = styled.section`

@@ -6,13 +6,13 @@ export const useMetaMask = (): [boolean, boolean, boolean] => {
   const [isMobile, setIsMobile] = useState(false);
 
   const checkMetaMaskSetting = useCallback(() => {
-    if (window.ethereum.isMetaMask) {
+    const env = navigator.userAgent.toLowerCase();
+    const mobile = /iphone|ipad|ipod|android|mobi/i.test(env);
+    setIsChrome(env.indexOf("chrome") > -1);
+    setIsMobile(mobile);
+    if (!mobile && window.ethereum.isMetaMask) {
       setIsMetaMaskInstalled(true);
     }
-
-    const env = navigator.userAgent.toLowerCase();
-    setIsChrome(env.indexOf("chrome") > -1);
-    setIsMobile(/iphone|ipad|ipod|android|mobi/i.test(env));
   }, []);
 
   useEffect(() => {

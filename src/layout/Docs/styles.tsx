@@ -12,6 +12,7 @@ export const DocsDivider = styled.div`
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -50%);
+    perspective: 1000px;
     
     & > path {
       fill: rgba(255, 255, 255, 0.16);
@@ -68,9 +69,10 @@ export const ArticleLayout = styled.section`
     height: 200vh;
     //gap: clamp(36px, 4.44vw, 64px);
     flex: 2;
+    z-index: 1;
     
     .stencil-64 {
-      margin: clamp(24px, 3.333vw, 48px) 0;
+      margin: 0 0 clamp(24px, 3.333vw, 48px) 0;
     }
     
     .bold-36 {
@@ -78,7 +80,7 @@ export const ArticleLayout = styled.section`
     }
     
     .bold-48 {
-      margin: clamp(24px, 3.333vw, 48px) 0;
+      margin: 0 0 clamp(24px, 3.333vw, 48px) 0;
     }
     
     .red-highlight {
@@ -87,6 +89,25 @@ export const ArticleLayout = styled.section`
       & > li {
         cursor: pointer;
       }
+      
+      & > a {
+        color: inherit;
+      }
+    }
+    
+    .divider {
+      margin: clamp(36px, 4.44vw, 64px) 0;
+    }
+    
+    .flex-row {
+      display: flex;
+      align-items: center;
+    }
+    
+    .label {
+      border-radius: 4px;
+      padding: 1px 8px;
+      background: rgba(255, 255, 255, 0.2);
     }
   }
   

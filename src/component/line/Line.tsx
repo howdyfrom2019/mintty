@@ -3,6 +3,7 @@ import {Blur, LineBody, LineWrapper} from "./styles";
 
 interface Props {
   className?: string;
+  height?: number;
   style?: CSSProperties;
   glowEffect?: boolean;
   color?: string;
@@ -11,6 +12,7 @@ interface Props {
 
 const Line: React.FC<Props> = (
   {
+    height,
     className,
     style,
     glowEffect,
@@ -19,7 +21,7 @@ const Line: React.FC<Props> = (
   }) => {
   return (
     <LineWrapper className={className}>
-      <LineBody isVertical={isVertical} style={style} color={color} />
+      <LineBody isVertical={isVertical} style={style} color={color} height={height} />
       {glowEffect && <Blur isVertical={isVertical} style={style} color={color} />}
     </LineWrapper>
   )

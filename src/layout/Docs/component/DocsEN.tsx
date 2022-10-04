@@ -1,10 +1,12 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {useMetaMask} from "../../../utils/useMetaMask";
-import {ReactComponent as Logo} from "../../../assets/svg/Logo_white.svg";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useMetaMask } from "../../../utils/useMetaMask";
+import { ReactComponent as Logo } from "../../../assets/svg/Logo_white.svg";
+import { ReactComponent as MetaMask } from "../../../assets/svg/MetaMask.svg";
 import Button from "../../../component/button/button";
-import {ArticleLayout, DocsDivider} from "../styles";
+import { ArticleLayout, DocsDivider } from "../styles";
 import ArticleNav from "../../../component/articlenav/ArticleNav";
 import useMouseInteractive from "../../../utils/useMouseInteractive";
+import Line from "../../../component/line/Line";
 
 const DocsEN = () => {
   const [isMetaMaskInstalled, isChrome, isMobile] = useMetaMask();
@@ -91,6 +93,19 @@ const DocsEN = () => {
               If you wanna set up such a kind of above envs, please click each
               hyperlink and read a full guide. </span>
           </span>
+          <Line height={1} className={`divider`} color={"rgba(229, 229, 229, 0.42)"} />
+          <span className={`bold-48 flex-row`}>1. Ready to MetaMask
+            <MetaMask style={{ marginLeft: 8 }} />
+          </span>
+          <span className={"normal-24"}>When you access to a web 3.0 project, you have to have a
+            account. Surprisingly, This can be easily added to extension
+            of Chrome. Please follow me😊</span>
+          <div className={"flex-row"} style={{ gap: 30, margin: "24px 0 48px 0" }}>
+            <span className={`label normal-24`}>[Download Link]</span>
+            <span className={`red-highlight normal-24`}>
+              <a href={""}>HERE WE GO!</a>
+            </span>
+          </div>
         </section>
         <ArticleNav
           className={"aside-nav"}

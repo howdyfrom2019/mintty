@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 interface LineProps {
   isVertical?: boolean;
   color?: string;
+  height?: number;
 }
 
 export const LineWrapper = styled.div`
@@ -16,7 +17,9 @@ export const LineWrapper = styled.div`
 
 export const LineBody = styled.span<LineProps>`
   width: 100%;
-  height: 4px;
+  ${({ height }) => `
+    height: ${height ? height : 4}px; 
+  `}
   border-radius: 1rem;
   filter: drop-shadow(0, 0, 12px, var(--highlight));
   transform-origin: left top;

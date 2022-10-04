@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mintty/static/css/main.60f29814.css",
-    "main.js": "/mintty/static/js/main.ebd49d14.js",
+    "main.js": "/mintty/static/js/main.896b7ac8.js",
     "static/js/787.c63fdfe0.chunk.js": "/mintty/static/js/787.c63fdfe0.chunk.js",
     "static/media/target.gif": "/mintty/static/media/target.d8d461e67a0645900f0b.gif",
     "static/media/splash-background.png": "/mintty/static/media/splash-background.611f1bb7bde495df45ad.png",
@@ -12,12 +12,15 @@
     "static/media/NotoSansKR-Regular.woff2": "/mintty/static/media/NotoSansKR-Regular.e95adf0e9aeddac43f42.woff2",
     "static/media/NotoSansKR-Bold.woff2": "/mintty/static/media/NotoSansKR-Bold.a4ecc3f7a43f7d43ce24.woff2",
     "static/media/original.jpg": "/mintty/static/media/original.ddcf076f3ae067c97801.jpg",
+    "static/media/metamask2.png": "/mintty/static/media/metamask2.be92684f4db02767db59.png",
     "static/media/Atami-Stencil-Bold.otf": "/mintty/static/media/Atami-Stencil-Bold.347855018f645cb1e9ac.otf",
     "static/media/Atami-Stencil.otf": "/mintty/static/media/Atami-Stencil.1a9d880d7281f7c31c73.otf",
     "static/media/Atami-Bold.otf": "/mintty/static/media/Atami-Bold.dc9f5bcd2949f3e0ec93.otf",
     "static/media/Atami-Regular.otf": "/mintty/static/media/Atami-Regular.52985082120f87fa33e3.otf",
+    "static/media/metamask1.png": "/mintty/static/media/metamask1.c5d6114dfc2bb8472e78.png",
     "static/media/aAtmospheric.ttf": "/mintty/static/media/aAtmospheric.f7d9830b308ca5f8ee22.ttf",
     "static/media/SangoUppercase-Static.otf": "/mintty/static/media/SangoUppercase-Static.c6d88b1e51cfed7d6112.otf",
+    "static/media/MetaMask.svg": "/mintty/static/media/MetaMask.4257454d56902be8cc051e40d16bee74.svg",
     "static/media/Logo_white.svg": "/mintty/static/media/Logo_white.cc12421632457c1ee8cd77c3bc20f33a.svg",
     "static/media/discord.svg": "/mintty/static/media/discord.9b67ae594d99c10091d625c7383f6dc5.svg",
     "static/media/github.svg": "/mintty/static/media/github.fb75069c7e3b30d05d51b242eb9769ae.svg",
@@ -26,11 +29,11 @@
     "static/media/stamp_border.svg": "/mintty/static/media/stamp_border.e679f202b5b060761222f88ad6049868.svg",
     "static/media/frame.svg": "/mintty/static/media/frame.ca6442f9ea6a95961868920eaa9cb43d.svg",
     "main.60f29814.css.map": "/mintty/static/css/main.60f29814.css.map",
-    "main.ebd49d14.js.map": "/mintty/static/js/main.ebd49d14.js.map",
+    "main.896b7ac8.js.map": "/mintty/static/js/main.896b7ac8.js.map",
     "787.c63fdfe0.chunk.js.map": "/mintty/static/js/787.c63fdfe0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.60f29814.css",
-    "static/js/main.ebd49d14.js"
+    "static/js/main.896b7ac8.js"
   ]
 }

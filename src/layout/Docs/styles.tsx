@@ -4,7 +4,6 @@ export const DocsDivider = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
   width: 100vw;
   
   & > svg {
@@ -21,14 +20,18 @@ export const DocsDivider = styled.div`
   
   & > header.nav {
     position: sticky;
-    top: 16px;
-    width: 75vw;
+    top: 0;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    padding: 16px 0;
     margin: 0 auto 5.6vw auto;
+    //padding: 16px 0;
     transition: all ease-out 0.32s;
+    background: var(--secondary);
+    z-index: 100;
   }
   
   .update-container {
@@ -71,16 +74,25 @@ export const ArticleLayout = styled.section`
     flex: 2;
     z-index: 1;
     
-    .stencil-64 {
+    .full-screen {
+      width: 100%;
+      margin: 0 0 clamp(24px, 3.333vw, 48px) 0;
+      
+      & > img {
+        width: 100%;
+      }
+    }
+    
+    .margin-bottom-48 {
       margin: 0 0 clamp(24px, 3.333vw, 48px) 0;
     }
     
-    .bold-36 {
+    .margin-bottom-24 {
       margin: clamp(12px, 1.667vw, 24px) 0;
     }
-    
-    .bold-48 {
-      margin: 0 0 clamp(24px, 3.333vw, 48px) 0;
+
+    .margin-top-down-64 {
+      margin: clamp(36px, 4.44vw, 64px) 0;
     }
     
     .red-highlight {
@@ -88,15 +100,15 @@ export const ArticleLayout = styled.section`
       text-decoration: underline;
       & > li {
         cursor: pointer;
+
+        & > a {
+          color: inherit;
+        }
       }
       
       & > a {
         color: inherit;
       }
-    }
-    
-    .divider {
-      margin: clamp(36px, 4.44vw, 64px) 0;
     }
     
     .flex-row {
@@ -113,7 +125,7 @@ export const ArticleLayout = styled.section`
   
   .aside-nav {
     max-width: 355px;
-    flex: 1 1 355px;
+    flex: 1 1 18.5vw;
     align-self: start;
     position: sticky;
     top: calc(64px + 16vh);

@@ -98,6 +98,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     margin: 0 auto;
     z-index: 96;
     width: 50vw;
+    height: 100vh;
     //height: calc(100vh + 64px);
   }
   
@@ -105,6 +106,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     filter: blur(1rem);
     margin: -1.5rem -2rem;
     width: 33.33vw;
+    height: 100vh;
     z-index: 95;
   }
   

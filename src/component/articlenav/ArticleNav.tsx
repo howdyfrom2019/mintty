@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import {ArticleNavDivider, BorderLine} from "./ArticleNavStyles";
 import {NavLink} from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link"
 /**
  * @children: if you want to add some els inside of nav.
  * @contents: [NOTICE] If you want to use text for nav. please input text array in this props.
@@ -31,8 +32,8 @@ const ArticleNav: React.FC<Props> = (
   return (
     <ArticleNavDivider className={className} style={style}>
       {upperLine && <BorderLine hlColor={hlColor} glowEffect={glowEffect}/>}
-      <NavLink to={"/docs"} className={({isActive}) => isActive ? `bold-24` : `normal-24 blur` }>Ahoooy!</NavLink>
-      <NavLink to={"/docs/meta"} className={({isActive}) => isActive ? `bold-24` : `normal-24 blur` }>Ready to MetaMask</NavLink>
+      <NavHashLink smooth to={"/docs#ahoooy"} className={({isActive}) => isActive ? `bold-24` : `normal-24 blur` }>Ahoooy!</NavHashLink>
+      <NavHashLink smooth to={"/docs#hey"} className={({isActive}) => isActive ? `bold-24` : `normal-24 blur` }>Ready to MetaMask</NavHashLink>
       {
         contents.map((v) => {
           const { content, urlParams } = v;

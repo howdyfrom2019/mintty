@@ -128,6 +128,7 @@ const DocsEN = () => {
           glowEffect
           upperLine
           underLine
+          baseUrl={"/docs/en"}
           contents={[]} />
       </ArticleLayout>
     </DocsDivider>

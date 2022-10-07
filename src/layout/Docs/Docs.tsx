@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import DocsEN from "./component/DocsEN";
 import Docs404 from "./component/Docs404";
 

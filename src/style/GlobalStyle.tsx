@@ -25,6 +25,17 @@ const style = css`
     max-width: 100vw;
     overflow-x: hidden;
     
+    .normal-16 {
+      font-family: Noto Sans KR, sans-serif;
+      color: var(--white);
+      font-size: clamp(10px, 0.8333vw, 16px);
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: -0.017em;
+      line-height: 19px;
+      white-space: break-spaces;
+    }
+    
     .normal-24 {
       font-family: Noto Sans KR, sans-serif;
       color: var(--white);
@@ -41,7 +52,7 @@ const style = css`
       font-size: clamp(12px, 1.667vw, 24px);
       font-style: normal;
       font-weight: bold;
-      letter-spacing: 0.068em;
+      letter-spacing: -0.017em;
       line-height: 29px;
       white-space: break-spaces;
     }

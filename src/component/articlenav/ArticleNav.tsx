@@ -37,7 +37,7 @@ const ArticleNav: React.FC<Props> = (
     <ArticleNavDivider className={className} style={style}>
       {upperLine && <BorderLine hlColor={hlColor} glowEffect={glowEffect}/>}
       <NavHashLink smooth to={`${baseUrl}#ahoooy`} className={ currentHash === "#ahoooy" ? `bold-24` : `normal-24 blur` }>Ahoooy!</NavHashLink>
-      <NavHashLink smooth to={`${baseUrl}#hey`} className={ currentHash === "#hey" ? `bold-24` : `normal-24 blur` }>Ready to MetaMask</NavHashLink>
+      <NavHashLink smooth to={`${baseUrl}#ready-to-metamask`} className={ currentHash === "#ready-to-metamask" ? `bold-24` : `normal-24 blur` }>Ready to MetaMask</NavHashLink>
       {
         contents.map((v) => {
           const { content, hash } = v;

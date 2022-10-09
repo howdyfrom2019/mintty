@@ -9,6 +9,7 @@ import useMouseInteractive from "../../../utils/useMouseInteractive";
 import Line from "../../../component/line/Line";
 import MetaMask1 from "../../../assets/img/metamask1.png";
 import MetaMask2 from "../../../assets/img/metamask2.png";
+import URLInfo from "../../../component/URLInfo/URLInfo";
 
 const DocsEN = () => {
   const [isMetaMaskInstalled, isChrome, isMobile] = useMetaMask();
@@ -96,7 +97,7 @@ const DocsEN = () => {
               hyperlink and read a full guide. </span>
           </span>
           <Line height={1} className={`divider margin-top-down-64`} color={"rgba(229, 229, 229, 0.42)"} />
-          <span className={`bold-48 flex-row margin-bottom-48`}>1. Ready to MetaMask
+          <span className={`bold-48 flex-row margin-bottom-48`} id={"ready-to-metamask"}>1. Ready to MetaMask
             <MetaMask style={{ marginLeft: 8 }} />
           </span>
           <span className={"normal-24 margin-bottom-24"}>When you access to a web 3.0 project, you have to have a
@@ -111,7 +112,7 @@ const DocsEN = () => {
           <figure className={"full-screen"}>
             <img src={MetaMask1} alt={"metamask1"} />
           </figure>
-          <span className={"normal-24 margin-bottom-48"} id={"hey"}>Just add this app in your chrome.
+          <span className={"normal-24 margin-bottom-48"}>Just add this app in your chrome.
             And then you can see this in your chrome extension plug-in.</span>
           <figure className={"full-screen margin-bottom-48"}>
             <img src={MetaMask2} alt={"metamask2"} />
@@ -122,6 +123,21 @@ const DocsEN = () => {
             <br /><br />
             Let’s direct to MetaMask and move to<strong> [setting] - [advanced]</strong>
             and just activate “show test network”</span>
+          <Line height={1} className={`divider margin-top-down-64`} color={"rgba(229, 229, 229, 0.42)"} />
+          <span className={`bold-48 flex-row margin-bottom-48`}>2. Ready to IPFS</span>
+          <span className={`normal-24 margin-bottom-48`}>
+            PFS means InterPlanetary File System.
+            <br />As you know, It would be a constant-data.(It carved in chain!)
+            <br />But, Always cost is problem.💰 It’s too high that uploading a raw image leads to you broke.
+            <br /><br />Therefore, we weill use a FREE IPFS service called
+            <a href={"https://www.pinata.cloud/"} target={"_blank"} rel="noreferrer">Pinata</a>
+          </span>
+          <URLInfo
+            className={"margin-bottom-48"}
+            url={"https://www.pinata.cloud/"}
+            imgUrl={"https://global-uploads.webflow.com/629e4fe96456f848f903e7ef/62a1f017e3f284c5ff001063_pinata-featured-image.png"}
+            title={"Pinata | Your home for NFT media"}
+            description={"Welcome to Pinata - Your home for NFT Media. We power the web3 space distributing content for NFTs across some of the top marketplaces, metaverses, apps and more. Get started today on your web3 journey."} />
         </section>
         <ArticleNav
           className={"aside-nav"}

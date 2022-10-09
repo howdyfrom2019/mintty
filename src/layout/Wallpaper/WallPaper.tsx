@@ -86,9 +86,9 @@ const WallPaper: React.FC<Props> = ({ isFirstVisited, callback }) => {
           </div>
           <Line className={"verticalLine"} isVertical />
           <LeftNav>
-            <NavLink className={"bold-24"} to={"/docs"}>GUIDE</NavLink>
-            <NavLink className={"bold-24"} to={"/mintty"}>MINTTY</NavLink>
-            <NavLink className={"bold-24"} to={"/sources"}>SOURCES</NavLink>
+            <NavLink className={"bold-24"} style={{ letterSpacing: 0.068 }} to={"/docs"}>GUIDE</NavLink>
+            <NavLink className={"bold-24"} style={{ letterSpacing: 0.068 }} to={"/mintty"}>MINTTY</NavLink>
+            <NavLink className={"bold-24"} style={{ letterSpacing: 0.068 }} to={"/sources"}>SOURCES</NavLink>
           </LeftNav>
           <RightNav>
             <Stamp />

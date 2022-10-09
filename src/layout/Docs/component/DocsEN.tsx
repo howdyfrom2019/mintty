@@ -79,7 +79,7 @@ const DocsEN = () => {
       </header>
       <ArticleLayout>
         <section className={"article-wrapper"}>
-          <span className={`stencil-64 margin-bottom-48`}>Ahoooy!🥌</span>
+          <span className={`stencil-64 margin-bottom-48`} id={"ahoooy"}>Ahoooy!🥌</span>
           <span className={`normal-24`}>This web provides you with free minting functions very easily WITHOUT any difficult words.
             <br />I hope this web would be a bunch of kinder service than any other Web3.0 sites.</span>
           <span className={`bold-36 margin-bottom-24`}>♻️ Environment</span>
@@ -111,7 +111,7 @@ const DocsEN = () => {
           <figure className={"full-screen"}>
             <img src={MetaMask1} alt={"metamask1"} />
           </figure>
-          <span className={"normal-24 margin-bottom-48"}>Just add this app in your chrome.
+          <span className={"normal-24 margin-bottom-48"} id={"hey"}>Just add this app in your chrome.
             And then you can see this in your chrome extension plug-in.</span>
           <figure className={"full-screen margin-bottom-48"}>
             <img src={MetaMask2} alt={"metamask2"} />
@@ -128,6 +128,7 @@ const DocsEN = () => {
           glowEffect
           upperLine
           underLine
+          baseUrl={"/docs/en"}
           contents={[]} />
       </ArticleLayout>
     </DocsDivider>

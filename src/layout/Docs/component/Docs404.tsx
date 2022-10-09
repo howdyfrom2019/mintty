@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 const Docs404: React.FC<{ language?: string }> = ({ language }) => {
   const navigator = useNavigate();
   useEffect(() => {
-    if (!language) navigator("/docs/kr", { replace: true });
+    if (!language) navigator("/docs/en", { replace: true });
   }, [language, navigator]);
   return (
     <NotFoundDocs>

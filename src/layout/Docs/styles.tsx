@@ -69,7 +69,6 @@ export const ArticleLayout = styled.section`
   .article-wrapper {
     display: flex;
     flex-direction: column;
-    height: 200vh;
     //gap: clamp(36px, 4.44vw, 64px);
     flex: 2;
     z-index: 1;

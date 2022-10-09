@@ -62,7 +62,7 @@ const DocsEN = () => {
       <header className={"nav"} ref={headerRef}>
         <div className={"update-container"}>
           <span className={"bold-24"} style={{ letterSpacing: -0.17 }}>Last Updated</span>
-          <span className={"normal-24"}>30 September, 2022</span>
+          <span className={"normal-24"}>04 October, 2022</span>
         </div>
         <div className={"button-container"}>
           <Button btnType={"default"} animation>

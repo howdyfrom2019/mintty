@@ -3,7 +3,7 @@ import { useMetaMask } from "../../../utils/useMetaMask";
 import { ReactComponent as Logo } from "../../../assets/svg/Logo_white.svg";
 import { ReactComponent as MetaMask } from "../../../assets/svg/MetaMask.svg";
 import Button from "../../../component/button/button";
-import { ArticleLayout, DocsDivider } from "../styles";
+import {ArticleLayout, Code, DocsDivider} from "../styles";
 import ArticleNav from "../../../component/articlenav/ArticleNav";
 import useMouseInteractive from "../../../utils/useMouseInteractive";
 import Line from "../../../component/line/Line";
@@ -66,7 +66,7 @@ const DocsEN = () => {
       <header className={"nav"} ref={headerRef}>
         <div className={"update-container"}>
           <span className={"bold-24"} style={{ letterSpacing: -0.17 }}>Last Updated</span>
-          <span className={"normal-24"}>04 October, 2022</span>
+          <span className={"normal-24"}>11 October, 2022</span>
         </div>
         <div className={"button-container"}>
           <Button btnType={"default"} animation>
@@ -168,6 +168,26 @@ const DocsEN = () => {
           <span className={"normal-24 margin-bottom-48"}>
             And It gonna be a waste to store the whole CID for every artwork.
             <br />There would be a good solution with uploading .JSON file.
+          </span>
+          <Code className={"margin-bottom-48"}>
+              {"{"}
+              <br />
+                &ensp;&ensp;“name”: “mouse”,<br />
+                &ensp;&ensp;“description”: “codename1. he sneaks everywhere and hear everything.”,<br />
+                &ensp;&ensp;“image”: “ipfs://YOUR_IPFS_CID”<br />
+              {"}"}
+          </Code>
+          <span className={"normal-24 margin-bottom-48"}>
+            Write in above way for every artwork.
+            <br />If you plan to release for 1,000, prepare 1,000 JSON files.
+            <br />The important thing is using the key in exactly same as mine.
+          </span>
+          <span className={"bold-36 margin-bottom-24"}>🌲 Upload with folder.</span>
+          <span className={"normal-24"}>
+            Please place your JSON files in a folder and click
+            <br /><strong>[Upload+] - [Folder]</strong> in this way.
+            <br /><br />If everything is gonna well, you can check with clicking folder name and a file.
+            <br />There might be a same content with you uploaded. and everything is OK.
           </span>
         </section>
         <ArticleNav

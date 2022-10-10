@@ -139,3 +139,10 @@ export const ArticleLayout = styled.section`
     top: calc(64px + 16vh);
   }
 `;
+
+export const Code = styled.code`
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  line-height: 24px;
+`;

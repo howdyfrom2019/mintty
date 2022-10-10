@@ -141,6 +141,12 @@ const style = css`
       text-align: center;
       letter-spacing: -0.017em;
     }
+    
+    .code-24 {
+      font-family: source-code-pro, sans-serif;
+      color: var(--white);
+      font-size: clamp(12px, 1.667vw, 24px);
+    }
   }
 `;
 

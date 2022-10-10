@@ -80,6 +80,15 @@ export const ArticleLayout = styled.section`
       & > img {
         width: 100%;
       }
+      
+      & > figcaption {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.52);
+        
+        .warning {
+          color: var(--primary);
+        }
+      }
     }
     
     .margin-bottom-48 {

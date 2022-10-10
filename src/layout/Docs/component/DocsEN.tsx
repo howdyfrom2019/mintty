@@ -9,7 +9,10 @@ import useMouseInteractive from "../../../utils/useMouseInteractive";
 import Line from "../../../component/line/Line";
 import MetaMask1 from "../../../assets/img/metamask1.png";
 import MetaMask2 from "../../../assets/img/metamask2.png";
+import IPFS1 from "../../../assets/img/ipfs1.png";
+import IPFS2 from "../../../assets/img/ipfs2.png";
 import URLInfo from "../../../component/URLInfo/URLInfo";
+import Quote from "../../../component/Quote/Quote";
 
 const DocsEN = () => {
   const [isMetaMaskInstalled, isChrome, isMobile] = useMetaMask();
@@ -129,8 +132,8 @@ const DocsEN = () => {
             PFS means InterPlanetary File System.
             <br />As you know, It would be a constant-data.(It carved in chain!)
             <br />But, Always cost is problem.💰 It’s too high that uploading a raw image leads to you broke.
-            <br /><br />Therefore, we weill use a FREE IPFS service called
-            <a href={"https://www.pinata.cloud/"} target={"_blank"} rel="noreferrer">Pinata</a>
+            <br /><br />Therefore, we weill use a FREE IPFS service called &nbsp;
+            <a className={"red-highlight"} href={"https://www.pinata.cloud/"} target={"_blank"} rel="noreferrer">Pinata</a>
           </span>
           <URLInfo
             className={"margin-bottom-48"}
@@ -138,6 +141,34 @@ const DocsEN = () => {
             imgUrl={"https://global-uploads.webflow.com/629e4fe96456f848f903e7ef/62a1f017e3f284c5ff001063_pinata-featured-image.png"}
             title={"Pinata | Your home for NFT media"}
             description={"Welcome to Pinata - Your home for NFT Media. We power the web3 space distributing content for NFTs across some of the top marketplaces, metaverses, apps and more. Get started today on your web3 journey."} />
+          <figure className={"full-screen margin-bottom-48"}>
+            <img src={IPFS1} alt={"ipfs1"} />
+            <figcaption className={"normal-16"}>
+              <span className={"warning"}>[CAUTION]</span>
+              <br />Gotta need your own image file.
+              <br />Just for test, it’s OK. but do not release with copies. it’s illegal.
+            </figcaption>
+          </figure>
+          <span className={"bold-36 margin-bottom-24"}>🌱 Upload your image file.  </span>
+          <span className={"normal-24 margin-bottom-48"}>
+            If you do log-in for pinata, able to see screen like above.
+            <br />Click <strong>[Upload+] - [File]</strong> button, and you can upload a file.
+          </span>
+          <figure className={"full-screen margin-bottom-48"}>
+            <img src={IPFS2} alt={"ipfs2"} />
+          </figure>
+          <span className={"bold-36 margin-bottom-24"}>☘️ Check the CID</span>
+          <span className={"normal-24 margin-bottom-24"}>
+            The most important part in here is CID.
+            <br />Actually, IPFS is similar to a HTTP protocol. It gonna same like this.
+          </span>
+          <Quote className={"margin-bottom-24"}>
+            `ipfs://${"{"}CID{"}"}`
+          </Quote>
+          <span className={"normal-24 margin-bottom-48"}>
+            And It gonna be a waste to store the whole CID for every artwork.
+            <br />There would be a good solution with uploading .JSON file.
+          </span>
         </section>
         <ArticleNav
           className={"aside-nav"}
